@@ -1,15 +1,21 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+
 int main(){
-    vector<int> nums = {1, 2, 3};
-    
-    nums.insert(nums.begin() + 1, 1);
-    nums.push_back(4);
-    for(int num:nums){
-        cout << num << endl;
+    vector<int> prices = {1, 2, 3, 2, 1, 6};
+    int buy = prices[0];
+    int maxprofit = 0;
+    for (int i = 1; i < size(prices);i++){
+        if(prices[i]<buy){
+            buy = prices[i];
+        }
+        int profit = prices[i]-buy;
+        if(profit>maxprofit){
+            maxprofit = profit;
+        }
+        
     }
-    cout << nums[1]<<endl;
-    cout << nums.at(4);
+    cout << maxprofit;
     return 0;
 }
